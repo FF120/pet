@@ -1,0 +1,65 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * ZOO layout positions
+ */
+
+/* position: media */
+.wk-zoo-item div.media-top { margin-bottom: 10px; }
+
+.wk-zoo-item div.media-left {
+	margin-right: 15px;
+	float: left;
+}
+
+.wk-zoo-item div.media-right {
+	margin-left: 15px;
+	float: right;
+}
+
+.wk-zoo-item div.media-middle,
+.wk-zoo-item div.media-bottom { margin-top: 15px; }
+
+.wk-zoo-item div.media > img,
+.wk-zoo-item div.media > a > img,
+.wk-zoo-item div.media > object,
+.wk-zoo-item div.media > embed { display: block; }
+
+/* position: title */
+.wk-zoo-item h3.title {
+	margin: 0px;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: normal;
+	letter-spacing: 0px;
+}
+
+.wk-zoo-item h3.title a { text-decoration: none; }
+
+/* position: meta */
+.wk-zoo-item p.meta {
+	margin: 0px;
+	font-size: 11px;
+	color: #969696;
+	line-height: 13px;
+	font-style: italic;
+}
+
+/* position: description */
+.wk-zoo-item div.description { margin: 10px 0px 0px 0px; }
+
+.wk-zoo-item div.description > div { margin-top: 5px; }
+.wk-zoo-item div.description > div:first-child { margin-top: 0px; }
+
+/* position: links */
+.wk-zoo-item p.links { margin: 7px 0px 0px 0px; }
+
+.wk-zoo-item p.links a:after {
+	content: " »";
+	font-size: 14px;
+}
+
+.wk-map .wk-zoo-item img {
+	max-width: none;
+	height: auto;
+}

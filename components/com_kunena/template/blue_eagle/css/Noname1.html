@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn" dir="ltr" >
+	<head>
+		<!-- The following JDOC Head tag loads all the header and meta information from your site config and content. -->
+		  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Kunena :: 发表主题</title>
+  <link href="/joomla/index.php/luntan" rel="canonical" />
+  <link href="/joomla/templates/atomic/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="http://localhost/joomla/index.php/component/search/?Itemid=135&amp;format=opensearch" rel="search" title="搜索   " type="application/opensearchdescription+xml" />
+  <link rel="stylesheet" href="/joomla/components/com_kunena/template/blue_eagle/css/mediaboxAdv-min.css" type="text/css" />
+  <link rel="stylesheet" href="/joomla/components/com_kunena/template/blue_eagle/css/kunena.forum-min.css" type="text/css" />
+  <link rel="stylesheet" href="/joomla/components/com_kunena/template/blue_eagle/css/kunena.default-min.css" type="text/css" />
+  <link rel="stylesheet" href="/joomla/components/com_kunena/template/blue_eagle/css/kunena.20-min.css" type="text/css" />
+  <link rel="stylesheet" href="/joomla/media/system/css/calendar-jos.css" type="text/css"  title="绿色"  media="all" />
+  <link rel="stylesheet" href="/joomla/cache/widgetkit/widgetkit-8052c719.css" type="text/css" />
+  <style type="text/css">
+	/* Kunena Custom CSS */
+	#Kunena div.kblock > div.kheader,#Kunena .kblock div.kheader { background: #5388B4 !important; }
+	#Kunena #ktop { border-color: #5388B4; }
+	#Kunena #ktop span.ktoggler { background: #5388B4; }
+	#Kunena #ktab a:hover,
+	#Kunena #ktab li.Kunena-item-active a	{ background-color: #5388B4; }
+	#Kunena #ktab ul.menu li.active a { background-color: #5388B4; }
+	#Kunena a:link,
+	#Kunena a:visited,
+	#Kunena a:active {color: #5388B4;}
+	#Kunena a:focus {outline: none;}
+	#Kunena a:hover {color: #FF0000;}	#Kunena a:link,
+	#Kunena a:visited,
+	#Kunena a:active {color: #5388B4;}
+	#Kunena a:focus {outline: none;}	#Kunena div.kannouncement div.kheader { background: #5388B4 !important; }	#Kunena div#kannouncement .kanndesc { background: #FFFFFF; }	#Kunena div.kfrontstats div.f { background: #5388B4 !important; }	#Kunena div.kwhoisonline div.kheader { background: #5388B4 !important; }	#Kunena #ktab a { background-color: #737373 !important; }	#Kunena #ktab ul.menu li.active a,#Kunena #ktab li#current.selected a { background-color: #5388B4 !important; }	#Kunena #ktab a:hover { background-color: #5388B4 !important; }	#Kunena #ktop { border-color: #5388B4 !important; }	#Kunena #ktab a span { color: #FFFFFF !important; }	#Kunena #ktab #current a span { color: #FFFFFF !important; }	#Kunena #ktop span.ktoggler { background-color: #5388B4 !important; }	#Kunena .kicon-profile { background-image: url("/joomla/components/com_kunena/template/blue_eagle/media/iconsets/profile/default/default.png"); }
+	#Kunena .kicon-button { background-image: url("/joomla/components/com_kunena/template/blue_eagle/media/iconsets/buttons/default/default.png") !important; }
+	#Kunena #kbbcode-toolbar li a,#Kunena #kattachments a { background-image:url("/joomla/components/com_kunena/template/blue_eagle/media/iconsets/editor/default/default.png"); }
+	/* End of Kunena Custom CSS */
+  </style>
+  <script src="/joomla/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/joomla/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/joomla/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/joomla/media/kunena/js/mediaboxAdv.js" type="text/javascript"></script>
+  <script src="/joomla/media/kunena/js/default.js" type="text/javascript"></script>
+  <script src="/joomla/media/system/js/validate.js" type="text/javascript"></script>
+  <script src="/joomla/components/com_kunena/template/blue_eagle/js/editor.js" type="text/javascript"></script>
+  <script src="/joomla/media/kunena/js/poll.js" type="text/javascript"></script>
+  <script src="/joomla/media/system/js/calendar.js" type="text/javascript"></script>
+  <script src="/joomla/media/system/js/calendar-setup.js" type="text/javascript"></script>
+  <script src="/joomla/media/widgetkit/js/jquery.js" type="text/javascript"></script>
+  <script src="/joomla/cache/widgetkit/widgetkit-c9597127.js" type="text/javascript"></script>
+  <script type="text/javascript">
+// <![CDATA[
+var kunena_toggler_close = "折叠";
+var kunena_toggler_open = "展开";
+// ]]>
+var arrayanynomousbox={}
+var pollcategoriesid = {"3":1};
+window.addEvent('domready', function() {
+			$$('.hasTip').each(function(el) {
+				var title = el.get('title');
+				if (title) {
+					var parts = title.split('::', 2);
+					el.store('tip:title', parts[0]);
+					el.store('tip:text', parts[1]);
+				}
+			});
+			var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false});
+		});
+function keepAlive() {	var myAjax = new Request({method: "get", url: "index.php"}).send();} window.addEvent("domready", function(){ keepAlive.periodical(840000); });
+config_attachment_limit = 8
+// <![CDATA[
+window.addEvent('domready', function() {
+	kbbcode = new kbbcode('kbbcode-message', 'kbbcode-toolbar', {
+		dispatchChangeEvent: true,
+		changeEventDelay: 1000,
+		interceptTab: true
+});
+
+kbbcode.addFunction('bold', function() {
+	this.focus().wrapSelection('[b]', '[/b]', true);
+}, {
+	'title': '粗体',
+	'alt': '粗体： [b]粗体[/b]',
+	'id': 'kbbcode-bold-button'
+});
+
+kbbcode.addFunction('italic', function() {
+	this.focus().wrapSelection('[i]', '[/i]', true);
+}, {
+	'title': '斜体',
+	'alt': '斜体: [i]文本[/i]',
+	'id': 'kbbcode-italic-button'
+});
+
+kbbcode.addFunction('underline', function() {
+	this.focus().wrapSelection('[u]', '[/u]', true);
+}, {
+	'title': '下划线',
+	'alt': '下划线: [u]文本[/u]',
+	'id': 'kbbcode-underline-button'
+});
+
+kbbcode.addFunction('strike', function() {
+	this.focus().wrapSelection('[strike]', '[/strike]', true);
+}, {
+	'title': '删除线',
+	'alt': '删除线: [strike]文本[/strike]',
+	'id': 'kbbcode-strike-button'
+});
+
+kbbcode.addFunction('sub', function() {
+	this.focus().wrapSelection('[sub]', '[/sub]', true);
+}, {
+	'title': '下标',
+	'alt': '下标: [sub]文本[/sub]',
+	'id': 'kbbcode-sub-button'
+});
+
+kbbcode.addFunction('sup', function() {
+	this.focus().wrapSelection('[sup]', '[/sup]', true);
+}, {
+	'title': '上标',
+	'alt': '上标: [sup]文本[/sup]',
+	'id': 'kbbcode-sup-button'
+});
+
+kbbcode.addFunction('size', function() {
+	kToggleOrSwap('kbbcode-size-options');
+}, {
+	'title': '文字大小',
+	'alt': '文字大小: 选择字号后应用到所选文字',
+	'id': 'kbbcode-size-button'
+});
+
+kbbcode.addFunction('color', function() {
+	kToggleOrSwap('kbbcode-color-options');
+}, {
+	'title': '颜色',
+	'alt': '颜色: [color=#FF6600]文本[/color]',
+	'id': 'kbbcode-color-button'
+});
+
+kbbcode.addFunction('#', function() {
+}, {
+	'class': 'kbbcode-separator'});
+
+kbbcode.addFunction('ulist', function() {
+selection = this.focus().getSelection();
+	if (selection) {
+		this.processEachLine(function(line) {
+			return '  [li]' + line + '[/li]';
+		}, false);
+		this.wrapSelection('[ul]\n', '\n[/ul]', false);
+	} else {
+		this.wrapSelection('[ul]\n  [li]', '[/li]\n  [li][/li]\n[/ul]', false);
+	}
+}, {
+	'title': '无序列表',
+	'alt': '无序列表: [ul] [li]文本[/li] [/ul] - 提示: 列表中必须有列表条目',
+	'id': 'kbbcode-ulist-button'
+});
+
+kbbcode.addFunction('olist', function() {
+selection = this.focus().getSelection();
+	if (selection) {
+		this.processEachLine(function(line) {
+			return '  [li]' + line + '[/li]';
+		}, false);
+		this.wrapSelection('[ol]\n', '\n[/ol]', false);
+	} else {
+		this.wrapSelection('[ol]\n  [li]', '[/li]\n  [li][/li]\n[/ol]', false);
+	}
+}, {
+	'title': '编号列表',
+	'alt': '编号列表： [ol] [li]内容[/li] [/ol] - 提示：必须包含条目',
+	'id': 'kbbcode-olist-button'
+});
+
+kbbcode.addFunction('list', function() {
+	this.focus().wrapSelection('[li]', '[/li]', true);
+}, {
+	'title': '列表条目',
+	'alt': '项目符号列表: [li] 项目符号列表 [/li]',
+	'id': 'kbbcode-list-button'
+});
+
+kbbcode.addFunction('left', function() {
+	this.focus().wrapSelection('[left]', '[/left]', true);
+}, {
+	'title': '左对齐',
+	'alt': '左对齐: [left]文本[/left]',
+	'id': 'kbbcode-left-button'
+});
+
+kbbcode.addFunction('center', function() {
+	this.focus().wrapSelection('[center]', '[/center]', true);
+}, {
+	'title': '居中',
+	'alt': '居中: [center]文本[/center]',
+	'id': 'kbbcode-center-button'
+});
+
+kbbcode.addFunction('right', function() {
+	this.focus().wrapSelection('[right]', '[/right]', true);
+}, {
+	'title': '右对齐',
+	'alt': '右对齐: [right]文本[/right]',
+	'id': 'kbbcode-right-button'
+});
+
+kbbcode.addFunction('#', function() {
+}, {
+	'class': 'kbbcode-separator'});
+
+kbbcode.addFunction('quote', function() {
+	this.focus().wrapSelection('[quote]', '[/quote]', true);
+}, {
+	'title': '引用',
+	'alt': '引用: [quote]文本[/quote]',
+	'id': 'kbbcode-quote-button'
+});
+
+kbbcode.addFunction('code', function() {
+	this.focus().wrapSelection('[code]', '[/code]', true);
+}, {
+	'title': '代码',
+	'alt': '代码: [code]代码[/code]',
+	'id': 'kbbcode-code-button'
+});
+
+kbbcode.addFunction('table', function() {
+selection = this.focus().getSelection();
+	if (selection) {
+		this.processEachLine(function(line) {
+			return '  [tr]\n    [td]' + line + '[/td]\n  [/tr]';
+		}, false);
+		this.wrapSelection('\n[table]\n', '\n[/table]\n', false);
+	} else {
+		this.wrapSelection('[table]\n  [tr]\n    [td]', '[/td]\n    [td][/td]\n  [/tr]\n  [tr]\n    [td][/td]\n    [td][/td]\n  [/tr]\n[/table]', false);
+	}
+}, {
+	'title': '表格',
+	'alt': '插入表格： [table][tr][td]第一行[/td][/tr][tr][td]行[/td][/tr][/table]',
+	'id': 'kbbcode-table-button'
+});
+
+kbbcode.addFunction('spoiler', function() {
+	this.focus().wrapSelection('[spoiler]', '[/spoiler]', true);
+}, {
+	'title': '添加隐藏内容',
+	'alt': '隐藏文本: 点击之后显示隐藏文字',
+	'id': 'kbbcode-spoiler-button'
+});
+
+kbbcode.addFunction('hide', function() {
+	this.focus().wrapSelection('[hide]', '[/hide]', true);
+}, {
+	'title': '向游客隐藏内容',
+	'alt': '隐藏文字: [hide]任意隐藏文字[/hide] - 向游客隐藏部分帖子内容',
+	'id': 'kbbcode-hide-button'
+});
+
+kbbcode.addFunction('#', function() {
+}, {
+	'class': 'kbbcode-separator'});
+
+kbbcode.addFunction('image', function() {
+	kToggleOrSwap('kbbcode-image-options');
+}, {
+	'title': '图片链接',
+	'alt': '图片链接： [img size=400]http://www.google.com/images/web_logo_left.gif[/img]',
+	'id': 'kbbcode-image-button'
+});
+
+kbbcode.addFunction('link', function() {
+	sel = this.focus().getSelection(); if (sel) { document.id('kbbcode-link_text').set('value', sel); }
+	kToggleOrSwap('kbbcode-link-options');
+}, {
+	'title': '链接',
+	'alt': '链接: [url=http://www.zzz.com/]这是一个链接[/url]',
+	'id': 'kbbcode-link-button'
+});
+
+kbbcode.addFunction('#', function() {
+}, {
+	'class': 'kbbcode-separator'});
+
+kbbcode.addFunction('ebay', function() {
+	this.focus().wrapSelection('[ebay]', '[/ebay]', true);
+}, {
+	'title': 'eBay商品',
+	'alt': 'eBay: [ebay]ItemID[/ebay]',
+	'id': 'kbbcode-ebay-button'
+});
+
+kbbcode.addFunction('video', function() {
+	kToggleOrSwap('kbbcode-video-options');
+}, {
+	'title': '视频',
+	'alt': '视频: 选择视频网站或网址一方法',
+	'id': 'kbbcode-video-button'
+});
+
+kbbcode.addFunction('map', function() {
+	this.focus().wrapSelection('[map]', '[/map]', true);
+}, {
+	'title': '地图',
+	'alt': '插入地图：[map]地址[/map]',
+	'id': 'kbbcode-map-button'
+});
+
+kbbcode.addFunction('#', function() {
+}, {
+	'class': 'kbbcode-separator'});
+
+kbbcode.addFunction('help', function() {
+	window.open('http://docs.kunena.org/index.php/bbcode');
+}, {
+	'title': '帮助',
+	'alt': '获得如何使用BBCode 编辑器的帮助',
+	'id': 'kbbcode-help-button'
+});
+});
+
+// ]]>
+// <![CDATA[
+function kPreviewHelper()
+{
+	if (_previewActive == true){
+		previewRequest = new Request.JSON({secure: false, url: "index.php?option=com_kunena&view=topic&layout=edit&format=raw",
+				onSuccess: function(response){
+			var __message = document.id("kbbcode-preview");
+			if (__message) {
+				__message.set("html", response.preview);
+				__message.fireEvent('updated');
+			}
+			}}).post({body: document.id("kbbcode-message").get("value")
+		});
+	}
+}
+
+window.addEvent('domready', function() {
+
+
+kbbcode.addFunction('Poll', function() {
+	kToggleOrSwap("kbbcode-poll-options");
+}, {'id': 'kbbcode-poll-button',
+	'class': 'kbbcode-poll-button',
+'style':'display: none;',	'title': '投票',
+	'alt': '添加或修改该帖的投票'});
+
+
+kEditorInitialize();
+});
+
+// ]]>
+// <![CDATA[
+var KUNENA_POLL_CATS_NOT_ALLOWED = "此版不允许投票功能。";
+var KUNENA_EDITOR_HELPLINE_OPTION = "投票: 投票选项";
+var KUNENA_POLL_OPTION_NAME = "选项";
+var KUNENA_POLL_NUMBER_OPTIONS_MAX_NOW = "投票选项已到达最大值。";
+var KUNENA_ICON_ERROR = "\/joomla\/components\/com_kunena\/template\/blue_eagle\/images\/publish_x.png";
+var kunena_anonymous_name = "匿名";
+
+window.addEvent('domready', function(){
+
+	function kunenaSelectUsername(obj, kuser) {
+		if (obj.get('checked')) {
+			document.id('kauthorname').set('value',kunena_anonymous_name).removeProperty('disabled');
+			document.id('kanynomous-check-name').setStyle('display');
+		} else {
+			document.id('kanynomous-check-name').setStyle('display','none');
+			document.id('kauthorname').set('value',kuser).set('disabled', 'disabled');
+		}
+	}
+
+	function kunenaCheckPollallowed(catid) {
+		if ( pollcategoriesid[catid] !== undefined ) {
+			document.id('kbbcode-poll-button').setStyle('display');
+		} else {
+			document.id('kbbcode-poll-button').setStyle('display','none');
+		}
+	}
+
+	function kunenaCheckAnonymousAllowed(catid) {
+		if(document.id('kanynomous-check') !== null && document.id('kanonymous') !== null) {
+			if ( arrayanynomousbox[catid] !== undefined ) {
+				document.id('kanynomous-check').setStyle('display');
+				document.id('kanonymous').set('checked','checked');
+			} else {
+				document.id('kanynomous-check').setStyle('display','none');
+				kbutton.removeProperty('checked');
+			}
+		}
+				kunenaSelectUsername(kbutton,kuser);
+			}
+	//	for hide or show polls if category is allowed
+	if(document.id('postcatid') !== null) {
+		document.id('postcatid').addEvent('change', function(e) {
+			kunenaCheckPollallowed(this.value);
+		});
+	}
+
+	if(document.id('kauthorname') !== undefined) {
+		var kuser = document.id('kauthorname').get('value');
+		var kbutton = document.id('kanonymous');
+				kunenaSelectUsername(kbutton, kuser);
+		kbutton.addEvent('click', function(e) {
+			kunenaSelectUsername(this, kuser);
+		});
+			}
+	//	to select if anynomous option is allowed on new topic tab
+	if(document.id('postcatid') !== null) {
+		document.id('postcatid').addEvent('change', function(e) {
+			var postcatid = document.id('postcatid').value;
+			kunenaCheckAnonymousAllowed(postcatid);
+		});
+	}
+
+	if(document.id('postcatid') !== null) {
+		kunenaCheckPollallowed(document.id('postcatid').getSelected().get("value"));
+		kunenaCheckAnonymousAllowed(document.id('postcatid').getSelected().get("value"));
+	}
+});
+
+
+// ]]>
+Calendar._DN = new Array ("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"); Calendar._SDN = new Array ("周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"); Calendar._FD = 0; Calendar._MN = new Array ("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"); Calendar._SMN = new Array ("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"); Calendar._TT = {};Calendar._TT["INFO"] = "关于日历"; Calendar._TT["ABOUT"] =
+ "DHTML Date/Time Selector\n" +
+ "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL.  See http://gnu.org/licenses/lgpl.html for details." +
+"\n\n" +
+"日期的选择：\n" +
+"- 使用 { 和 } 按钮选择年\n" +
+"- 使用 < 和 > 按钮选择月\n" +
+"- 对上面的任何按钮按住鼠标按钮即可快速选择。";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Time selection:\n" +
+"- Click on any of the time parts to increase it\n" +
+"- or Shift-click to decrease it\n" +
+"- or click and drag for faster selection.";
+
+		Calendar._TT["PREV_YEAR"] = "点击则移动到上一年。单击并按住鼠标按钮即可选定并列的多年。"; Calendar._TT["PREV_MONTH"] = "点击则移动到上个月。单击并按住鼠标按钮即可选定并列的多个月。"; Calendar._TT["GO_TODAY"] = "转到今日"; Calendar._TT["NEXT_MONTH"] = "点击则移动到下个月。单击并按住鼠标按钮即可选定并列的多个月"; Calendar._TT["NEXT_YEAR"] = "点击则移动到下一年。单击并按住鼠标按钮即可选定并列的多年。"; Calendar._TT["SEL_DATE"] = "选择日期。"; Calendar._TT["DRAG_TO_MOVE"] = "拖动以移动"; Calendar._TT["PART_TODAY"] = "今天"; Calendar._TT["DAY_FIRST"] = "%s 显示为第一天"; Calendar._TT["WEEKEND"] = "0,6"; Calendar._TT["CLOSE"] = "关闭"; Calendar._TT["TODAY"] = "今天"; Calendar._TT["TIME_PART"] = "按住Shift并点击或拖动鼠标即可改变其值。"; Calendar._TT["DEF_DATE_FORMAT"] = "%Y-%m-%d"; Calendar._TT["TT_DATE_FORMAT"] = "%a, %b %e"; Calendar._TT["WK"] = "周数"; Calendar._TT["TIME"] = "时间：";
+window.addEvent('domready', function() {Calendar.setup({
+				// Id of the input field
+				inputField: "kpoll-time-to-live",
+				// Format of the input field
+				ifFormat: "%Y-%m-%d",
+				// Trigger for the calendar (button ID)
+				button: "kpoll-time-to-live_img",
+				// Alignment (defaults to "Bl")
+				align: "Tl",
+				singleClick: true,
+				firstDay: 0
+				});});
+  </script>
+  <link rel="alternate" type="application/rss+xml" title="在桌面软件上阅读最新帖子" href="/joomla/index.php/forum/topics/mode-topics/sel-720?format=feed&amp;type=rss" />
+
+
+		<!-- The following five lines load the Blueprint CSS Framework (http://blueprintcss.org). If you don't want to use this framework, delete these lines. -->
+		<link rel="stylesheet" href="/joomla/templates/atomic/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="/joomla/templates/atomic/css/blueprint/print.css" type="text/css" media="print" />
+		<!--[if lt IE 8]><link rel="stylesheet" href="/joomla/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="/joomla/templates/atomic/css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="/joomla/templates/atomic/css/blueprint/plugins/joomla-nav/screen.css" type="text/css" media="screen" />
+
+		<!-- The following line loads the template CSS file located in the template folder. -->
+		<link rel="stylesheet" href="/joomla/templates/atomic/css/template.css" type="text/css" />
+
+		<!-- The following four lines load the Blueprint CSS Framework and the template CSS file for right-to-left languages. If you don't want to use these, delete these lines. -->
+		
+		<!-- The following line loads the template JavaScript file located in the template folder. It's blank by default. -->
+		<script type="text/javascript" src="/joomla/templates/atomic/js/template.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<hr class="space" />
+			<div class="joomla-header span-16 append-1">
+				<h1>  </h1>
+			</div>
+							<div class="joomla-search span-7 last">
+	  	 			
+	  	 			<form action="/joomla/index.php/luntan" method="post" class="inline">
+	<div class="search">
+		<input name="searchword" id="mod-search-searchword" maxlength="20" class="inputbox" type="text" size="20" value="搜索..."  onblur="if (this.value=='') this.value='搜索...';" onfocus="if (this.value=='搜索...') this.value='';" /><input type="submit" value="萌一下" class="button" onclick="this.form.searchword.focus();"/>	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="135" />
+	</div>
+</form>
+
+				</div>
+					</div>
+							<div class="container">
+			<!-- The class on the root UL tag was changed to match the Blueprint nav style -->
+<ul class="joomla-nav">
+<li class="item101"><a href="/joomla/" >热帖首页</a></li><li id="current" class="selected item135"><a href="/joomla/index.php/luntan" >我要发帖</a></li><li class="item108"><a href="/joomla/index.php/baike" >宠物百科</a></li><li class="item136"><a href="/joomla/index.php/jaiyuan" >我的家园</a></li><li class="item138"><a href="/joomla/index.php/yangchongjingyan" >养宠经验</a></li><li class="item139"><a href="/joomla/index.php/qiuyiwenyao" >求医问药</a></li></ul>
+		</div>
+	
+					<div class="container">
+			
+<div class="breadcrumbs">
+<a href="/joomla/" class="pathway">主页</a> <img src="/joomla/media/system/images/arrow.png" alt=""  /> <span>我要发帖</span></div>
+		</div>
+	
+		
+		<div class="container">
+			<div class="span-16 append-1">
+							
+<div id="system-message-container">
+</div>
+				<!--[if lte IE 7]>
+<link rel="stylesheet" href="/joomla/components/com_kunena/template/blue_eagle/css/kunena.forum.ie7.css" type="text/css" />
+<![endif]-->
+<div id="Kunena" class="layout">
+<div id="ktop">
+	<div id="ktopmenu">
+		<div id="ktab"> </div>
+	</div>
+	<span class="ktoggler fltrt"><a class="ktoggler close" title="折叠" rel="kprofilebox"></a></span>
+</div>
+<div class="kblock kpbox">
+	<div class="kcontainer" id="kprofilebox">
+		<div class="kbody">
+<table class="kprofilebox">
+	<tbody>
+		<tr class="krow1">
+						<td class="kprofilebox-left">
+				<img class="kavatar" src="http://localhost/joomla/media/kunena/avatars/resized/size72/gallery/bunny.png" alt="admin的头像"  />			</td>
+						<td class="kprofileboxcnt">
+				<ul class="kprofilebox-link">
+															<li><a href="/joomla/index.php/forum/announcement/list">公告</a></li>				</ul>
+				<ul class="kprofilebox-welcome">
+					<li>欢迎, <strong><a class="kwho-admin" href="/joomla/index.php/forum/profile/893-admin" title="查看admin资料" rel="nofollow">admin</a></strong></li>
+					<li class="kms"><strong>上次访问日期:</strong> <span title="未知">未知</span></li>
+										<li>
+					<form action="/joomla/index.php/forum" method="post" name="login">
+						<input type="hidden" name="view" value="user" />
+						<input type="hidden" name="task" value="logout" />
+						<input type="hidden" name="e6f1e1b8649e0343c8957a6d364fef56" value="1" />
+
+						<input type="submit" name="submit" class="kbutton" value="注销" />
+					</form>
+					</li>
+									</ul>
+			</td>
+			<!-- Module position -->
+					</tr>
+	</tbody>
+</table>
+		</div>
+	</div>
+</div>
+
+<div class="kblock kpathway">
+	<div class="kcontainer" id="pathway_tbody">
+		<div class="ksectionbody">
+			<div class = "kforum-pathway">
+				<div class="path-element-first"><a href="/joomla/index.php/luntan">我要发帖</a></div>
+							</div>
+		</div>
+	</div>
+</div>
+
+<form action="/joomla/index.php/forum" method="post" class="postform form-validate" id="postform" name="postform" enctype="multipart/form-data" onsubmit="return myValidate(this);">
+	<input type="hidden" name="view" value="topic" />
+		<input type="hidden" name="task" value="post" />
+	<input type="hidden" name="parentid" value="0" />
+			<input type="hidden" name="e6f1e1b8649e0343c8957a6d364fef56" value="1" />
+<div class="kblock">
+	<div background=red;>
+		<h2><span>发表主题</span></h2>
+	</div>
+	<div class="kcontainer">
+		<div class="kbody">
+<table class="kblocktable" id="kposbtmessage">
+	<tbody id="kpost-message">
+				<tr id="kpost-category" class="krow2">
+			<td class="kcol-first"><strong>版块</strong></td>
+			<td class="kcol-mid"><select name="catid" id="postcatid" class="inputbox required"><option value="1" disabled="disabled"> 默认分区</option>
+<option value="2" selected="selected">-  新手报道</option>
+<option value="3">-  意见箱</option>
+</select></td>
+		</tr>
+		
+				<tr class="krow1" id="kanynomous-check" style="display:none;">
+			<td class="kcol-first">
+				<strong>匿名帖</strong>
+			</td>
+			<td class="kcol-mid">
+				<input type="checkbox" id="kanonymous" name="anonymous" value="1"  />
+				<label for="kanonymous">该帖含有敏感信息。移除该帖的用户信息（设为匿名帖）。</label>
+			</td>
+		</tr>
+		
+		<tr class="krow2" id="kanynomous-check-name"
+		style="display:none;">
+			<td class="kcol-first">
+				<strong>姓名</strong>
+			</td>
+			<td class="kcol-mid">
+				<input type="text" id="kauthorname" name="authorname" size="35" class="kinputbox postinput required" maxlength="35" value="admin" />
+			</td>
+		</tr>
+
+		
+		<tr id="kpost-subject" class="krow1">
+			<td class="kcol-first">
+				<strong>标题</strong>
+			</td>
+
+			<td class="kcol-mid"><input type="text" class="kinputbox postinput required" name="subject" id="subject" size="35"
+				maxlength="50" value="" tabindex="1" />
+			</td>
+		</tr>
+
+				<tr id="kpost-topicicons" class="krow2">
+			<td class="kcol-first">
+				<strong>主题图标</strong>
+			</td>
+
+			<td class="kcol-mid">
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="0"  checked="checked"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/default.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="1"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/exclamation.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="2"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/question.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="3"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/idea.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="4"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/love.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="9"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/merged.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="10"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/cross.png" alt="" border="0" />
+				</span>
+								<span class="kiconsel">
+				<input type="radio" name="topic_emoticon" value="8"  />
+				<img src="/joomla/media/kunena/topicicons/default/user/solved.png" alt="" border="0" />
+				</span>
+							</td>
+		</tr>
+		
+		<tr id="kpost-toolbar" class="krow1">
+	<td class="kcol-first kcol-editor-label">
+		<strong>BBCode</strong></td>
+	<td class="kcol-last kcol-editor-field">
+	<table class="kpostbuttonset">
+		<tr>
+			<td class="kpostbuttons">
+				<ul id="kbbcode-toolbar">
+					<li>
+						<script type="text/javascript">document.write('载入BBCode编辑器...')</script>
+						<noscript>BBCode编辑器禁用：请启用您浏览器的Javascript</noscript>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<!-- Start extendable secondary toolbar -->
+		<tr>
+			<td class="kpostbuttons">
+			<div id="kbbcode-size-options" style="display: none;">
+			<span class="kmsgtext-xs" title='[size=1]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=1]1 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			<span class="kmsgtext-s" title='[size=2]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=2]2 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			<span class="kmsgtext-m" title='[size=3]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=3]3 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			<span class="kmsgtext-l" title='[size=4]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=4]4 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			<span class="kmsgtext-xl" title='[size=5]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=5]5 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			<span class="kmsgtext-xxl" title='[size=6]'
+				onmouseover="javascript:document.id('helpbox').set('value', '文字大小: [size=6]6 号字[/size] - 提示：字号范围从 1 至 6')">&nbsp;示范内容&nbsp;</span>
+			</div>
+			<div id="kbbcode-color-options" style="display: none;">
+				<script type="text/javascript">kGenerateColorPalette('4%', '15px');</script>
+			</div>
+
+			<div id="kbbcode-link-options" style="display: none;">
+				文件名&nbsp;
+				<input id="kbbcode-link_url" name="url" type="text" size="40" value="http://"
+					onmouseover="javascript:document.id('helpbox').set('value', '链接: 网址')" />
+				文字&nbsp;
+				<input name="text2" id="kbbcode-link_text" type="text" size="30" maxlength="150"
+					onmouseover="javascript:document.id('helpbox').set('value', '链接: 文字 / 链接的描述')" />
+				<input type="button" name="insterLink" value="插入"
+					onclick="kbbcode.focus().replaceSelection('[url=' + document.id('kbbcode-link_url').get('value') + ']' + document.id('kbbcode-link_text').get('value') + '[/url]', false); kToggleOrSwap('kbbcode-link-options');"
+					onmouseover="javascript:document.id('helpbox').set('value', '链接: 应用链接')" />
+			</div>
+
+			<div id="kbbcode-image-options" style="display: none;">
+				大小&nbsp;
+				<input id="kbbcode-image_size" name="size" type="text" size="10" maxlength="10"
+					onmouseover="javascript:document.id('helpbox').set('value', '图片链接：大小')" />
+				文件名&nbsp;
+				<input name="url2" id="kbbcode-image_url" type="text" size="40" value="http://"
+					onmouseover="javascript:document.id('helpbox').set('value', '图像链接: 图片地址')" />&nbsp;
+				<input type="button" name="Link" value="插入" onclick="kInsertImageLink()"
+					onmouseover="javascript:document.id('helpbox').set('value', '图片链接：应用链接')" />
+			</div>
+
+						<div id="kbbcode-poll-options" style="display: none;">
+							<label class="kpoll-title-lbl" for="kpoll-title">投票标题</label>
+				<input type="text" class="inputbox" name="poll_title" id="kpoll-title"
+					maxlength="100" size="40"
+					value=""
+					onmouseover="javascript:document.id('helpbox').set('value', '投票：输入标题')" />
+
+				<img id="kbutton-poll-add"
+					src="/joomla/components/com_kunena/template/blue_eagle/images/icons/poll_add_options.png"
+					onmouseover="javascript:document.id('helpbox').set('value', '投票: 增加选项')" alt="添加投票选项" />
+				<img id="kbutton-poll-rem"
+					src="/joomla/components/com_kunena/template/blue_eagle/images/icons/poll_rem_options.png"
+					onmouseover="javascript:document.id('helpbox').set('value', '投票: 删除选项')" alt="移除投票选项" />
+
+				<label class="kpoll-term-lbl" for="kpoll-time-to-live">投票有效时间 (可选)</label>
+				<input type="text" title="" name="poll_time_to_live" id="kpoll-time-to-live" value="0000-00-00" onmouseover="javascript:document.id('helpbox').set('value', '投票：设定投资有效时间（可选）')" /><img src="/joomla/media/system/images/calendar.png" alt="日历" class="calendar" id="kpoll-time-to-live_img" />								<input type="hidden" name="nb_options_allowed" id="nb_options_allowed" value="4" />
+				<input type="hidden" name="number_total_options" id="numbertotal"
+					value="" />
+			</div>
+			
+			
+			<div id="kbbcode-video-options" style="display: none;">大小<input id="kvideosize"
+				name="videosize" type="text" size="5" maxlength="5"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: 大小')" />
+			宽度<input id="kvideowidth" name="videowidth"
+				type="text" size="5" maxlength="5"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: 宽度')" />
+			高度<input id="kvideoheight"
+				name="videoheight" type="text" size="5" maxlength="5"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: 高度')" /> <br />
+			视频网站 <select id="kvideoprovider"
+				name="provider" class="kbutton"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: 选择视频分享网站')">
+				<option value = ""></option><option value = "bofunk">Bofunk</option><option value = "break">Break</option><option value = "clipfish">Clipfish</option><option value = "dailymotion">Dailymotion</option><option value = "divx]http://">DivX</option><option value = "flash]http://">Flash</option><option value = "flashvars param=]http://">FlashVars</option><option value = "mediaplayer]http://">MediaPlayer</option><option value = "metacafe">Metacafe</option><option value = "myspace">MySpace</option><option value = "quicktime]http://">QuickTime</option><option value = "realplayer]http://">RealPlayer</option><option value = "rutube">RuTube</option><option value = "sapo">Sapo</option><option value = "streetfire">Streetfire</option><option value = "veoh">Veoh</option><option value = "videojug">Videojug</option><option value = "vimeo">Vimeo</option><option value = "wideo.fr">Wideo.fr</option><option value = "youtube">YouTube</option><option value = "youku">Youku</option>			</select> ID<input id="kvideoid"
+				name="videoid" type="text" size="11" maxlength="30"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: ID  - 在视频网址中可以找到ID')" />
+			<input id="kbutton_addvideo1" type="button" name="Video" accesskey="p"
+				onclick="kInsertVideo1()"
+				value="插入视频"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: [video size=100 width=480 height=360 provider=clipfish]3423432[/video]')" /><br />
+			文件名<input id="kvideourl" name="videourl"
+				type="text" size="30" maxlength="250" value="http://"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: 网址')" />
+			<input id="kbutton_addvideo2" type="button" name="Video" accesskey="p"
+				onclick="kInsertVideo2()"
+				value="插入视频"
+				onmouseover="javascript:document.id('helpbox').set('value', '视频: [video size=100 width=480 height=360]http://myvideodomain.com/myvideo[/video]')" />
+			</div>
+			</td>
+		</tr>
+				<tr>
+			<td class="kpostbuttons">
+			<div id="smilie"><img class="btnImage" src="/joomla/media/kunena/emoticons/cool.png" border="0" alt="B) " title="B) " onclick="kbbcode.focus().insert(' B) ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/sad.png" border="0" alt=":( " title=":( " onclick="kbbcode.focus().insert(' :( ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/smile.png" border="0" alt=":) " title=":) " onclick="kbbcode.focus().insert(' :) ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/cheerful.png" border="0" alt=":cheer: " title=":cheer: " onclick="kbbcode.focus().insert(' :cheer: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/wink.png" border="0" alt=";) " title=";) " onclick="kbbcode.focus().insert(' ;) ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/tongue.png" border="0" alt=":P " title=":P " onclick="kbbcode.focus().insert(' :P ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/angry.png" border="0" alt=":angry: " title=":angry: " onclick="kbbcode.focus().insert(' :angry: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/unsure.png" border="0" alt=":unsure: " title=":unsure: " onclick="kbbcode.focus().insert(' :unsure: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/shocked.png" border="0" alt=":ohmy: " title=":ohmy: " onclick="kbbcode.focus().insert(' :ohmy: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/wassat.png" border="0" alt=":huh: " title=":huh: " onclick="kbbcode.focus().insert(' :huh: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/ermm.png" border="0" alt=":dry: " title=":dry: " onclick="kbbcode.focus().insert(' :dry: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/grin.png" border="0" alt=":lol: " title=":lol: " onclick="kbbcode.focus().insert(' :lol: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/sick.png" border="0" alt=":sick: " title=":sick: " onclick="kbbcode.focus().insert(' :sick: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/silly.png" border="0" alt=":silly: " title=":silly: " onclick="kbbcode.focus().insert(' :silly: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/blink.png" border="0" alt=":blink: " title=":blink: " onclick="kbbcode.focus().insert(' :blink: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/blush.png" border="0" alt=":blush: " title=":blush: " onclick="kbbcode.focus().insert(' :blush: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/blush.png" border="0" alt=":oops: " title=":oops: " onclick="kbbcode.focus().insert(' :oops: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/kissing.png" border="0" alt=":kiss: " title=":kiss: " onclick="kbbcode.focus().insert(' :kiss: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/w00t.png" border="0" alt=":woohoo: " title=":woohoo: " onclick="kbbcode.focus().insert(' :woohoo: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/sideways.png" border="0" alt=":side: " title=":side: " onclick="kbbcode.focus().insert(' :side: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/dizzy.png" border="0" alt=":S " title=":S " onclick="kbbcode.focus().insert(' :S ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/devil.png" border="0" alt=":evil: " title=":evil: " onclick="kbbcode.focus().insert(' :evil: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/whistling.png" border="0" alt=":whistle: " title=":whistle: " onclick="kbbcode.focus().insert(' :whistle: ', 'after', false);" style="cursor:pointer"/> <img class="btnImage" src="/joomla/media/kunena/emoticons/pinch.png" border="0" alt=":pinch: " title=":pinch: " onclick="kbbcode.focus().insert(' :pinch: ', 'after', false);" style="cursor:pointer"/> 			</div>
+
+			</td>
+		</tr>
+				<!-- end of extendable secondary toolbar -->
+		<tr>
+			<td class="kposthint"><input type="text" name="helpbox" id="helpbox" size="45" class="kinputbox" disabled="disabled" maxlength="100"
+				value="BBCode 帮助 - 提示： BBCode 可以对所选文字生效!" /></td>
+		</tr>
+	</table>
+	</td>
+</tr>
+
+<tr id="kpost-message" class="krow2">
+	<td class="kcol-first kcol-editor-label"><strong>正文</strong><br />
+	<span class="ks" onclick="kGrowShrinkMessage(100);"
+		style="cursor: pointer">放大</span>&nbsp;/&nbsp; <span
+		class="ks" onclick="kGrowShrinkMessage(-100);"
+		style="cursor: pointer">缩小</span></td>
+
+	<td class="kcol-last kcol-editor-field">
+		<textarea class="ktxtarea required" name="message" id="kbbcode-message" rows="10" cols="50" tabindex="3"></textarea>
+
+		<!-- Hidden preview placeholder -->
+		<div id="kbbcode-preview" style="display: none;"></div>
+			</td>
+</tr>
+
+				<tr id="kpost-attachments" class="krow1">
+			<td class="kcol-first">
+				<strong>附件</strong>
+			</td>
+			<td class="kcol-mid">
+				<div id="kattachment-id" class="kattachment">
+					<span class="kattachment-id-container"></span>
+
+					<input class="kfile-input-textbox" type="text" readonly="readonly" />
+					<div class="kfile-hide hasTip" title="允许的扩展名：::jpg, jpeg, gif, png, txt, rtf, pdf, zip, tar.gz, tgz, tar.bz2" >
+						<input type="button" value="添加附件" class="kfile-input-button kbutton" />
+						<input id="kupload" class="kfile-input" name="kattachment" type="file" />
+					</div>
+					<a href="#" class="kattachment-remove kbutton" style="display: none">删除文件</a>
+					<a href="#" class="kattachment-insert kbutton" style="display: none">插入</a>
+				</div>
+
+							</td>
+		</tr>
+		
+				<tr id="kpost-tags" class="krow2">
+			<td class="kcol-first">
+				<strong>主题标签</strong>
+			</td>
+			<td class="kcol-mid">
+				<input type="text" class="kinputbox postinput" name="tags" id="tags" size="35" maxlength="100" value="" />
+			</td>
+		</tr>
+		
+		
+				<tr id="kpost-subscribe" class="krow1">
+			<td class="kcol-first">
+				<strong>订阅</strong>
+			</td>
+			<td class="kcol-mid">
+				<input type="checkbox" name="subscribeMe" id="subscribeMe" value="1" checked="checked" />
+				<label for="subscribeMe"><i>有人回复时，给我发送一封Email</i></label>
+			</td>
+		</tr>
+						<tr id="kpost-buttons" class="krow1">
+			<td id="kpost-buttons" colspan="2">
+				<input type="submit" name="ksubmit" class="kbutton"
+				value=" 提交 "
+				title="点击此处提交帖子" tabindex="4" />
+				<input type="button" name="preview" class="kbutton"
+				onclick="kToggleOrSwapPreview('kbbcode-preview-bottom')"
+				value=" 预览 "
+				title="点击此处预览帖子:: "tabindex="3" />
+				<input type="button" name="cancel" class="kbutton"
+				value=" 取消 "
+				onclick="javascript:window.history.back();"
+				title="点击此处取消发帖" tabindex="5" />
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+<script type="text/javascript">document.postform.subject.focus();</script></form>
+<div class="kblock kpathway">
+	<div class="kcontainer" id="pathway_tbody">
+		<div class="ksectionbody">
+			<div class = "kforum-pathway">
+				<div class="path-element-first"><a href="/joomla/index.php/luntan">我要发帖</a></div>
+							</div>
+		</div>
+	</div>
+</div>
+<!-- Module position: kunena_bottom -->
+<div class="krss-block"><a href="/joomla/index.php/forum/topics/mode-topics/sel-720?format=feed&amp;type=rss" rel="follow"><span class="kicon krss" title="在桌面软件上阅读最新帖子"></span></a></div>
+<div class="kfooter">
+	<span class="kfooter-time">创建页面时间：0.250秒</span>
+</div>
+</div>
+<div style="text-align:center"><a href="/joomla/index.php/forum/credits" rel="follow" style="display: inline; visibility: visible; text-decoration: none;">核心：</a> <a href="http://www.kunena.org" rel="follow" target="_blank" style="display: inline; visibility: visible; text-decoration: none;">Kunena 论坛</a></div>
+				<hr />
+			
+	        				<div class="span-7 last">
+	        							<h6>版权声明</h6>
+				<p style="text-align: right;"><strong>这是我们做的第一个网站哦~~</strong></p>	
+					
+					
+
+				</div>
+						</div>
+							<div class="span-7 last">
+					
+					
+					
+					
+					
+					
+					
+				</div>
+
+			
+			<div class="joomla-footer span-16 append-1">
+				<hr />
+				&copy;2013   			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,23 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * RTL Style Sheet
+ */
+
+.wk-slideshow-inside .nav li {
+	padding-right: 0;
+	padding-left: 7px;
+	float: right;
+}
+
+.wk-slideshow-inside > div:hover .next {
+	right: auto;
+	left: 30px;
+	background-position: 0 -50px;
+}
+
+.wk-slideshow-inside > div:hover .prev {
+	left: auto;
+	right: 30px;
+	background-position: 0 0;
+}

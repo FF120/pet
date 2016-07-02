@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>IceSlideshow Module</name>
+	<creationDate>January 2012</creationDate>
+	<author>IceTheme</author>
+	<copyright>GNU / GPL</copyright>
+	<authorEmail>info@icetheme.com</authorEmail>
+	<authorUrl>http://www.icetheme.com</authorUrl>
+	<version>1.7.0</version>
+	<description>MOD_ICESLIDESHOW_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_iceslideshow">mod_iceslideshow.php</filename>
+		<filename module="mod_iceslideshow">helper.php</filename>
+		<filename module="mod_iceslideshow">index.html</filename>
+		<filename module="mod_iceslideshow">CHANGELOG.php</filename>
+		<filename module="mod_iceslideshow">LICENSE.php</filename>
+		<folder module="mod_iceslideshow">libs</folder>
+		<folder module="mod_iceslideshow">assets</folder>
+		<folder module="mod_iceslideshow">themes</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_iceslideshow.ini</language>
+		<language tag="zh-CN">languages/zh-CN.mod_iceslideshow.ini</language>
+		<language tag="zh-CN">languages/zh-CN.mod_iceslideshow.sys.ini</language>
+		<language tag="zh-TW">languages/zh-TW.mod_iceslideshow.ini</language>
+		<language tag="zh-TW">languages/zh-TW.mod_iceslideshow.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_iceslideshow/libs/elements">
+			<fieldset name="basic">
+
+				<field name="theme" type="folderlist" hide_none="true" hide_default="true"  default="default-white" label="SELECT_THEME" description="SELECT_THEME_DESC" directory="modules/mod_iceslideshow/themes" filter="" exclude="" stripext="" />
+
+
+		<field name="spacer1" type="spacer" hr="true" />
+
+
+
+				<field name="imagemain_width" type="text" default="730" label="IMAGE_MAIN_WIDTH" description="IMAGE_MAIN_WIDTH_DESC" size="8"></field>
+				<field name="imagemain_height" type="text" default="380" label="IMAGE_MAIN_HEIGHT" description="IMAGE_MAIN_HEIGHT_DESC" size="8"></field>
+				<field name="image_quanlity" type="text" default="95" size="5" label="IMAGE_QUANLITY" description="IMAGE_QUANLITY_DESC" />
+
+				<field name="spacer2" type="spacer" hr="true" />
+
+
+				<field name="limit_items" type="text" default="5" label="LIMIT_ITEMS" description="LIMIT_ITEMS_DESC" size="5" />
+
+				<field name="display_button" type="radio" default="1" label="DISPLAY_BUTTON" description="DISPLAY_BUTTON_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+
+
+				<field name="show_readmore" type="radio" default="1" label="SHOW_READMORE" description="SHOW_READMORE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+
+				<field name="description_max_chars" type="text" default="100" label="DESCIPTION_MAX_CHARS" description="DESCIPTION_MAX_CHARS_DESC" size="8"  />
+
+				<field name="auto_strip_tags" type="radio" default="1" label="STRIP_TAGS" description="STRIP_TAGS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+
+
+
+			<field name="title_2" type="lofspacer" text="Module Mode Settings" label="" description=""/>
+
+			<field name="group" type="folderlist" hide_default="true" hide_none="true" default="content" label="SELECT_GROUP" directory="modules/mod_iceslideshow/libs/groups/" filter="" exclude="" stripext="" />
+
+				<field type="fgroup" title="START_GROUP" label="" description="" name="cotnentgroup" group="start" for="content" />
+
+				<field name="source" type="radio" default="content_category" label="SOURCE_FROM"  description="SOURCE_FROM_DESC" >
+					<option value="content_category">CATEGORY</option>
+					<option value="article_ids">ARTICLES_IDS</option>
+				</field>
+				<field name="article_ids" type="text" default="" label="ARTICLES_IDS"  description="ARTICLES_IDS_DESC" size="70" />
+				<field name="content_category" type="lofcategory" default="" label="CATEGORIES_SELECTION"  description="CATEGORIES_SELECTION_DESC" />
+				<field name="ordering" type="list" default="created_asc" label="ARTCILES_SORTED_BY" description="ARTCILES_SORTED_BY_DESC">
+					<option value="ordering_asc">ORDERING_ASCENDING</option>
+					<option value="ordering_desc">ORDERING_DESCENDING</option>
+					<option value="hits_asc">HIT_ASCENDING</option>
+					<option value="hits_desc">HIT_DESCENDING</option>
+					<option value="created_desc">DATE_ASCENDING</option>
+					<option value="created_asc">DATE_DESCENDING</option>
+					<option value="rand_">RANDOM</option>
+				</field>
+				<field name="encontentgroup" label="" description="" type="fgroup" title="" group="end" />
+
+
+
+
+				<field type="fgroup" title="START_GROUP" label="" description="" name="filegroup" group="start" for="file" />
+
+					<field name="file1" type="lofeffect" index="1" default="450" label="FILE_1" description="FILE_DESC"></field>
+					<field name="file2" type="lofeffect" index="2" default="450" label="FILE_2" description="FILE_DESC"></field>
+					<field name="file3" type="lofeffect" index="3" default="450" label="FILE_3" description="FILE_DESC"></field>
+					<field name="file4" type="lofeffect" index="4" default="450" label="FILE_4" description="FILE_DESC"></field>
+					<field name="file5" type="lofeffect" index="5" default="450" label="FILE_5" description="FILE_DESC"></field>
+					<field name="file6" type="lofeffect" index="6" default="450" label="FILE_6" description="FILE_DESC"></field>
+					<field name="file7" type="lofeffect" index="7" default="450" label="FILE_7" description="FILE_DESC"></field>
+					<field name="file8" type="lofeffect" index="8" default="450" label="FILE_8" description="FILE_DESC"></field>
+					<field name="file9" type="lofeffect" index="9" default="450" label="FILE_9" description="FILE_DESC"></field>
+					<field name="file10" type="lofeffect" index="10" default="450" label="FILE_10" description="FILE_DESC"></field>
+					<field name="file11" type="lofeffect" index="11" default="450" label="FILE_11" description="FILE_DESC"></field>
+					<field name="file12" type="lofeffect" index="12" default="450" label="FILE_12" description="FILE_DESC"></field>
+					<field name="file13" type="lofeffect" index="13" default="450" label="FILE_13" description="FILE_DESC"></field>
+					<field name="file14" type="lofeffect" index="14" default="450" label="FILE_14" description="FILE_DESC"></field>
+					<field name="file15" type="lofeffect" index="15" default="450" label="FILE_15" description="FILE_DESC"></field>
+					<field name="file16" type="lofeffect" index="16" default="450" label="FILE_16" description="FILE_DESC"></field>
+					<field name="file17" type="lofeffect" index="17" default="450" label="FILE_17" description="FILE_DESC"></field>
+					<field name="file18" type="lofeffect" index="18" default="450" label="FILE_18" description="FILE_DESC"></field>
+					<field name="file19" type="lofeffect" index="19" default="450" label="FILE_19" description="FILE_DESC"></field>
+					<field name="file20" type="lofeffect" index="20" default="450" label="FILE_20" description="FILE_DESC"></field>
+					<field name="file21" type="lofeffect" index="21" default="450" label="FILE_21" description="FILE_DESC"></field>
+					<field name="file22" type="lofeffect" index="22" default="450" label="FILE_22" description="FILE_DESC"></field>
+					<field name="file23" type="lofeffect" index="23" default="450" label="FILE_23" description="FILE_DESC"></field>
+					<field name="file24" type="lofeffect" index="24" default="450" label="FILE_24" description="FILE_DESC"></field>
+					<field name="file25" type="lofeffect" index="25" default="450" label="FILE_25" description="FILE_DESC"></field>
+					<field name="file26" type="lofeffect" index="26" default="450" label="FILE_26" description="FILE_DESC"></field>
+					<field name="file27" type="lofeffect" index="27" default="450" label="FILE_27" description="FILE_DESC"></field>
+					<field name="file28" type="lofeffect" index="28" default="450" label="FILE_28" description="FILE_DESC"></field>
+					<field name="file29" type="lofeffect" index="29" default="450" label="FILE_29" description="FILE_DESC"></field>
+					<field name="file30" type="lofeffect" index="30" default="450" label="FILE_30" description="FILE_DESC"></field>
+				<field name="enfilegroup" label="" description="" type="fgroup" title="" group="end" />
+
+
+
+
+				<!--Navigator Hidden-->
+			<field name="title_1" type="hidden" text="Navigation_Settings" label="" description=""/>
+
+				<field name="navigator_pos" type="hidden" default="top"  label="NAVIGATOR_POSITION" description="NAVIGATOR_POSITION_DESC">
+					<option value="0">DISABLE</option>
+					<option value="left">LEFT</option>
+					<option value="right">RIGHT</option>
+					<option value="top">TOP</option>
+					<option value="bottom">BOTTOM</option>
+				</field>
+				<field name="navitem_width"  type="hidden" default="12" label="NAVIGATOR_ITEM_WIDTH" description="NAVIGATOR_ITEM_WIDTH_DESC" size="8"></field>
+				<field name="navitem_height"  type="hidden" default="12" label="NAVIGATOR_ITEM_HEIGHT" description="NAVIGATOR_ITEM_HEIGHT_DESC" size="8"></field>
+				<field name="max_items_display"  type="hidden" default="3" label="MAX_ITEMS_DISPLAY" description="MAX_ITEMS_DISPLAY_DESC" size="4"></field>
+
+		<field name="spacer3" type="hidden" hr="true" />
+
+				<field name="auto_renderthumb"  type="hidden" default="1" label="RENDER_THUMBNAIL" description="RENDER_THUMBNAIL_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+
+				<field name="thumbnail_width"  type="hidden" default="60" label="THUMBNAIL_WIDTH" description="THUMBNAIL_WIDTH_DESC" size="8" />
+				<field name="thumbnail_height"  type="hidden" default="60" label="THUMBNAIL_HEIGHT" description="THUMBNAIL_HEIGHT_DESC" size="8" />
+
+		<field name="spacer4" type="hidden" hr="true" />
+
+				<!--<field name="replacer" type="text" default="..." label="REPLACER" description="REPLACER_DESC" />-->
+				<field name="title_max_chars"  type="hidden" default="100" label="TITLE_MAX_CHARS" description="TITLE_MAX_CHARS_DESC" size="8" />
+
+				<!--Navigator Hidden-->
+
+
+				<field text="OTHER_SETTINGS" type="lofspacer" />
+
+				<field name="layout_style" type="list" default="vrdown" label="PLAY_STYLE" description="PLAY_STYLE_DESC">
+					<option value="hrleft">HORIZONTAL_RIGHT_TO_LEFT</option>
+					<option value="hrright">HORIZONTAL_LEFT_TO_RIGHT</option>
+					<option value="vrup">VERTICAL_DOWN_TO_UP</option>
+					<option value="vrdown">VERTICAL_UP_TO_DOWN</option>
+					<option value="opacity">OPACITY</option>
+					<option value="zoom">ZOOMING</option>
+					<option value="pan">PANNING</option>
+					<option value="wipe">WIPING</option>
+					<option value="combo">COMBO_KENS</option>
+				</field>
+				<field name="spacer7" type="spacer" hr="true" />
+					<field name="zoom" type="text" default="50" label="ZOOM_VALUE" description="ZOOM_VALUE_DESC"/>
+					<field name="pan" type="text" default="50" label="PAN_VALUE" description="PAN_VALUE_DESC"/>
+					<field name="pansize" type="text" default="30" label="PANSIZE_VALUE" description="PANSIZE_VALUE_DESC"/>
+					<field name="slide_duration" type="text" default="2000" label="SLIDE_DURATION_VALUE" description="SLIDE_DURATION_VALUE_DESC"/>
+					<field name="wdirection" type="list" default="left" label="WIPE_TYPE_DIRECTION" description="WIPE_TYPE_DIRECTION_DESC">
+						<option value="left">LEFT</option>
+						<option value="right">RIGHT</option>
+						<option value="top">UP</option>
+						<option value="bottom">DOWN</option>
+					</field>
+				<field name="spacer8" type="spacer" hr="true" />
+				<field name="auto_start" type="radio" default="1" label="AUTO_START" description="AUTO_START_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="interval" type="text"  size="5"  default="4000" label="INTERVAL" description="INTERVAL_DESC" />
+				<field name="duration" type="text"  size="5"  default="1000" label="ANIMATION_DURATION" description="ANIMATION_DURATION_DESC" />
+				<field name="effect" type="list" default="Fx.Transitions.Sine.easeInOut" label="ANIMATION_TRANSITION" description="ANIMATION_TRANSITION_DESC">
+					<option value="Fx.Transitions.linear">linear</option>
+					<option value="Fx.Transitions.quartOut">QuartOut</option>
+					<option value="Fx.Transitions.Quad.easeIn">Quad.easeIn</option>
+					<option value="Fx.Transitions.Quad.easeOut">Quad.easeOut</option>
+					<option value="Fx.Transitions.Quad.easeInOut">Quad.easeInOut</option>
+					<option value="Fx.Transitions.Cubic.easeIn">Cubic.easeIn</option>
+					<option value="Fx.Transitions.Cubic.easeOut">Cubic.easeOut</option>
+					<option value="Fx.Transitions.Cubic.easeInOut">Cubic.easeInOut</option>
+					<option value="Fx.Transitions.Quart.easeIn">Quart.easeIn</option>
+					<option value="Fx.Transitions.Quart.easeOut">Quart.easeOut</option>
+					<option value="Fx.Transitions.Quart.easeInOut">Quart.easeInOut</option>
+					<option value="Fx.Transitions.Quint.easeIn">Quint.easeIn</option>
+					<option value="Fx.Transitions.Quint.easeOut">Quint.easeOut</option>
+					<option value="Fx.Transitions.Quint.easeInOut">Quint.easeInOut</option>
+					<option value="Fx.Transitions.Pow.easeIn">Pow.easeIn</option>
+					<option value="Fx.Transitions.Pow.easeOut">Pow.easeOut</option>
+					<option value="Fx.Transitions.Pow.easeInOut">Pow.easeInOut</option>
+					<option value="Fx.Transitions.Expo.easeIn">Expo.easeIn</option>
+					<option value="Fx.Transitions.Expo.easeOut">Expo.easeOut</option>
+					<option value="Fx.Transitions.Expo.easeInOut">Expo.easeInOut</option>
+					<option value="Fx.Transitions.Circ.easeIn">Circ.easeIn</option>
+					<option value="Fx.Transitions.Circ.easeOut">Circ.easeOut</option>
+					<option value="Fx.Transitions.Circ.easeInOut">Circ.easeInOut</option>
+					<option value="Fx.Transitions.Sine.easeIn">Sine.easeIn</option>
+					<option value="Fx.Transitions.Sine.easeOut">Sine.easeOut</option>
+					<option value="Fx.Transitions.Sine.easeInOut">Sine.easeInOut</option>
+					<option value="Fx.Transitions.Back.easeIn">Back.easeIn</option>
+					<option value="Fx.Transitions.Back.easeOut">Back.easeOut</option>
+					<option value="Fx.Transitions.Back.easeInOut">Back.easeInOut</option>
+					<option value="Fx.Transitions.Bounce.easeIn">Bounce.easeIn</option>
+					<option value="Fx.Transitions.Bounce.easeOut">Bounce.easeOut</option>
+					<option value="Fx.Transitions.Bounce.easeInOut">Bounce.easeInOut</option>
+					<option value="Fx.Transitions.Elastic.easeIn">Elastic.easeIn</option>
+					<option value="Fx.Transitions.Elastic.easeOut">Elastic.easeOut</option>
+					<option value="Fx.Transitions.Elastic.easeInOut">Elastic.easeInOut</option>
+				</field>
+
+				 <field
+					  name="preload"
+					  type="radio"
+					  default="1"
+					  label="MOD_ICE_FIELD_PRELOAD_LABEL"
+					  description="MOD_ICE_FIELD_PRELOAD_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field name="spacer6" type="spacer" hr="true" />
+				<field name="slide_caption" type="radio" default="1" label="SLIDE_CAPTION" description="SLIDE_CAPTION_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="caption_duration"  size="5"  type="text" default="1200" label="ANIMATION_CAPTION_DURATION" description="ANIMATION_CAPTION_DURATION_DESC" />
+				<field name="caption_height"  size="5"  type="text" default="70" label="CAPTION_HEIGHT" description="CAPTION_HEIGHT_DESC" />
+				<field name="caption_opacity"  size="5"  type="text" default="0.7" label="CAPTION_OPACITY" description="CAPTION_OPACITY_DESC" />
+			</fieldset>
+			<fieldset
+				name="advanced">
+
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"	description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="spacer5" type="spacer" hr="true" />
+
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option	value="1">JGLOBAL_USE_GLOBAL</option>
+					<option	value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode"	type="hidden" default="static">
+					<option	value="static"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

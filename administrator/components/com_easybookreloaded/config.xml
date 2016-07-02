@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fields addfieldpath="/administrator/components/com_easybookreloaded/models/fields">
+        <fieldset name="component">
+            <field name="ebrtitle1" type="ebrtitle" default="COM_EASYBOOKRELOADED_RIGHTS" label="" description=""/>
+            <field name="offline" type="list" default="0" label="COM_EASYBOOKRELOADED_GUESTBOOK_OFFLINE" description="COM_EASYBOOKRELOADED_GUESTBOOK_OFFLINE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="add_acl" type="acl" multiple="true" size="8" default="1" label="COM_EASYBOOKRELOADED_ADD_ACL" description="COM_EASYBOOKRELOADED_ADD_ACL_DESC" />
+            <field name="admin_acl" type="acl" multiple="true" size="8" default="8" label="COM_EASYBOOKRELOADED_ADMIN_ACL" description="COM_EASYBOOKRELOADED_ADMIN_ACL_DESC" />
+            <field name="ebrtitle2" type="ebrtitle" default="COM_EASYBOOKRELOADED_CONFIGURATION" label="" description=""/>
+            <field name="default_published" type="list" default="1" label="COM_EASYBOOKRELOADED_PUBLISH_NEW_ENTRIES" description="COM_EASYBOOKRELOADED_PUBLISH_NEW_ENTRIES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="send_mail" type="list" default="1" label="COM_EASYBOOKRELOADED_SEND_NOTIFICATION_EMAIL" description="COM_EASYBOOKRELOADED_SEND_NOTIFICATION_EMAIL_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="send_mail_html" type="list" default="1" label="COM_EASYBOOKRELOADED_SEND_NOTIFICATION_EMAIL_HTML" description="COM_EASYBOOKRELOADED_SEND_NOTIFICATION_EMAIL_HTML_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="emailfornotification" type="text" size="60" default="" label="COM_EASYBOOKRELOADED_EMAIL_FOR_NOTIFICATION" description="COM_EASYBOOKRELOADED_EMAIL_FOR_NOTIFICATION_DESC" />
+            <field name="secret_word" type="text" size="20" default="" label="COM_EASYBOOKRELOADED_SECRET_WORD" description="COM_EASYBOOKRELOADED_SECRET_WORD_DESC" />
+            <field name="valid_time_emailnot" type="text" size="5" default="1" label="COM_EASYBOOKRELOADED_VALID_TIME_FOR_NOTIFICATION" description="COM_EASYBOOKRELOADED_VALID_TIME_FOR_NOTIFICATION_DESC" />
+            <field name="badwordfilter" type="list" default="1" label="Badwordfilter" description="COM_EASYBOOKRELOADED_BADWORDFILTER_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="entries_perpage" type="text" size="3" default="10" label="COM_EASYBOOKRELOADED_ENTRIES_PER_PAGE" description="COM_EASYBOOKRELOADED_ENTRIES_PER_PAGE_DESC" />
+            <field name="entries_order" type="list" default="DESC" label="COM_EASYBOOKRELOADED_ENTRIES_ORDER" description="COM_EASYBOOKRELOADED_ENTRIES_ORDER_DESC">
+                <option value="DESC">COM_EASYBOOKRELOADED_NEW_ENTRIES_FIRST</option>
+                <option value="ASC">COM_EASYBOOKRELOADED_NEW_ENTRIES_LAST</option>
+            </field>
+            <field name="show_page_title" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_PAGE_TITLE" description="COM_EASYBOOKRELOADED_SHOW_PAGE_TITLE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="show_introtext" type="list" default="0" label="COM_EASYBOOKRELOADED_SHOW_INTROTEXT" description="COM_EASYBOOKRELOADED_SHOW_INTROTEXT_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+                <option value="2">COM_EASYBOOKRELOADED_JYESLANGUAGEFILE</option>
+            </field>
+            <field name="introtext" type="textarea" value="" rows="5" cols="40" filter="raw" label="COM_EASYBOOKRELOADED_INTROTEXT" description="COM_EASYBOOKRELOADED_INTROTEXT_DESC" />
+            <field name="support_bbcode" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_BBCODE" description="COM_EASYBOOKRELOADED_ALLOW_BBCODE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="support_smilie" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_SMILIES" description="COM_EASYBOOKRELOADED_ALLOW_SMILIES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="smilie_set" type="list" default="0" label="COM_EASYBOOKRELOADED_SMILIES_SET" description="COM_EASYBOOKRELOADED_SMILIES_SET_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_SET_1</option>
+                <option value="1">COM_EASYBOOKRELOADED_SET_2</option>
+            </field>
+            <field name="support_link" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_LINKS" description="COM_EASYBOOKRELOADED_ALLOW_LINKS_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="support_mail" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_EMAIL_ADDRESSES" description="COM_EASYBOOKRELOADED_ALLOW_EMAIL_ADDRESSES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="support_pic" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_PICTURES" description="COM_EASYBOOKRELOADED_ALLOW_PICTURES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="support_code" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_CODE" description="COM_EASYBOOKRELOADED_ALLOW_CODE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="support_youtube" type="list" default="1" label="COM_EASYBOOKRELOADED_ALLOW_YOUTUBE" description="COM_EASYBOOKRELOADED_ALLOW_YOUTUBE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="geshi_lines" type="list" default="1" label="COM_EASYBOOKRELOADED_GESHI_LINES" description="COM_EASYBOOKRELOADED_GESHI_LINES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="wordwrap" type="list" default="1" label="COM_EASYBOOKRELOADED_AUTOMATIC_WORD_WRAP" description="COM_EASYBOOKRELOADED_AUTOMATIC_WORD_WRAP_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="maxlength" type="text" size="4" default="75" label="COM_EASYBOOKRELOADED_AUTOMATIC_WORD_WRAP_AFTER" description="COM_EASYBOOKRELOADED_AUTOMATIC_WORD_WRAP_AFTER_DESC" />
+            <field name="template" type="list" default="0" label="COM_EASYBOOKRELOADED_TEMPLATE" description="COM_EASYBOOKRELOADED_TEMPLATE_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_BRIGHT</option>
+                <option value="1">COM_EASYBOOKRELOADED_DARK</option>
+                <option value="2">COM_EASYBOOKRELOADED_TRANSPARENT</option>
+            </field>
+            <field name="date_format" type="list" default="0" label="COM_EASYBOOKRELOADED_DATE_FORMAT" description="COM_EASYBOOKRELOADED_DATE_FORMAT_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_DATE_TIME</option>
+                <option value="1">COM_EASYBOOKRELOADED_DATE</option>
+            </field>
+            <field name="show_count_entries" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_COUNT_ENTRIES" description="COM_EASYBOOKRELOADED_SHOW_COUNT_ENTRIES_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="show_logo" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_LOGO" description="COM_EASYBOOKRELOADED_SHOW_LOGO_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+                <option value="2">COM_EASYBOOKRELOADED_TEXT</option>
+                <option value="3">COM_EASYBOOKRELOADED_TEXTINV</option>
+            </field>
+            <field name="ebrtitle3" type="ebrtitle" default="COM_EASYBOOKRELOADED_FORM" label="" description=""/>
+            <field name="show_rating" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_RATING" description="COM_EASYBOOKRELOADED_SHOW_RATING_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="rating_max"  type="list" default="5" label="COM_EASYBOOKRELOADED_MAX_RATING" description="COM_EASYBOOKRELOADED_MAX_RATING_DESC">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </field>
+            <field name="show_rating_type" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_RATING_TYPE" description="COM_EASYBOOKRELOADED_SHOW_RATING_TYPE_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_TYPE_1</option>
+                <option value="1">COM_EASYBOOKRELOADED_TYPE_2</option>
+                <option value="2">COM_EASYBOOKRELOADED_TYPE_3</option>
+            </field>
+            <field name="enable_log" type="list" default="1" label="COM_EASYBOOKRELOADED_IP_LOGGING" description="COM_EASYBOOKRELOADED_IP_LOGGING_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="enable_log_notice" type="list" default="0" label="COM_EASYBOOKRELOADED_IP_LOGGING_NOTICE" description="COM_EASYBOOKRELOADED_IP_LOGGING_NOTICE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="registered_username" type="list" default="0" label="COM_EASYBOOKRELOADED_REGISTERED_USERNAME" description="COM_EASYBOOKRELOADED_REGISTERED_USERNAME_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_USERNAME</option>
+                <option value="1">COM_EASYBOOKRELOADED_NAME</option>
+            </field>
+            <field name="show_mail" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_MAIL" description="COM_EASYBOOKRELOADED_SHOW_MAIL_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="require_mail" type="list" default="1" label="COM_EASYBOOKRELOADED_REQUIRE_MAIL" description="COM_EASYBOOKRELOADED_REQUIRE_MAIL_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="show_title" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_TITLE" description="COM_EASYBOOKRELOADED_SHOW_TITLE_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="require_title" type="list" default="1" label="COM_EASYBOOKRELOADED_REQUIRE_TITLE" description="COM_EASYBOOKRELOADED_REQUIRE_TITLE_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="show_loca" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_LOCATION" description="COM_EASYBOOKRELOADED_SHOW_LOCATION_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="show_home" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_HOME" description="COM_EASYBOOKRELOADED_SHOW_HOME_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="nofollow_home" type="list" default="1" label="COM_EASYBOOKRELOADED_NOFOLLOW_HOME" description="COM_EASYBOOKRELOADED_NOFOLLOW_HOME_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="show_icq" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_ICQ" description="COM_EASYBOOKRELOADED_SHOW_ICQ_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="show_aim" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_AIM" description="COM_EASYBOOKRELOADED_SHOW_AIM_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="show_msn" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_MSN" description="COM_EASYBOOKRELOADED_SHOW_MSN_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="show_yah" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_YAH" description="COM_EASYBOOKRELOADED_SHOW_YAH_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="show_skype" type="list" default="1" label="COM_EASYBOOKRELOADED_SHOW_SKYPE" description="COM_EASYBOOKRELOADED_SHOW_SKYPE_DESC">
+                <option value="0">COM_EASYBOOKRELOADED_HIDE</option>
+                <option value="1">COM_EASYBOOKRELOADED_SHOW</option>
+            </field>
+            <field name="ebrtitle4" type="ebrtitle" default="COM_EASYBOOKRELOADED_SPAM" label="" description=""/>
+            <field name="enable_spam" type="list" default="1" label="COM_EASYBOOKRELOADED_ENABLE_EASYCALCCHECK" description="COM_EASYBOOKRELOADED_ENABLE_EASYCALCCHECK_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="max_value" type="text" default="20" label="COM_EASYBOOKRELOADED_MAXIMUM_VALUE_FOR_EVERY_NUMBER" description="COM_EASYBOOKRELOADED_MAXIMUM_VALUE_FOR_EVERY_NUMBER_DESC" />
+            <field name="operator" type="list" default="0" label="COM_EASYBOOKRELOADED_CHOOSE_OPERATOR" description="COM_EASYBOOKRELOADED_CHOOSE_OPERATOR_DESC">
+                <option value="0">+</option>
+                <option value="1">-</option>
+                <option value="2">COM_EASYBOOKRELOADED_RANDOM</option>
+            </field>
+            <field name="type_time_sec" type="text" default="5" label="COM_EASYBOOKRELOADED_TIME_LOCK" description="COM_EASYBOOKRELOADED_TIME_LOCK_DESC" />
+            <field name="enable_spam_reg" type="list" default="1" label="COM_EASYBOOKRELOADED_ENABLE_EASYCALCCHECK_FOR_REG" description="COM_EASYBOOKRELOADED_ENABLE_EASYCALCCHECK_FOR_REG_DESC">
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+            <field name="maxnumberlinks" type="text" default="2" label="COM_EASYBOOKRELOADED_MAXIMUM_NUMBER_OF_LINKS" description="COM_EASYBOOKRELOADED_MAXIMUM_NUMBER_OF_LINKS_DESC" />
+            <field name="block_ip" type="textarea" default="" rows="5" cols="40" label="COM_EASYBOOKRELOADED_BLOCK_IP" description="COM_EASYBOOKRELOADED_BLOCK_IP_DESC" />
+            <field name="timelock_ip" type="text" default="30" label="COM_EASYBOOKRELOADED_TIMELOCK_IP" description="COM_EASYBOOKRELOADED_TIMELOCK_IP_DESC" />
+        </fieldset>
+        <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+            <field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" validate="rules"	filter="rules" component="com_easybookreloaded" section="component" />
+        </fieldset>
+    </fields>
+</config>

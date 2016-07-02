@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5">
+    <name>简体中文Simplified Chinese</name>
+	<tag>zh-CN</tag>
+    <packagename>zh-CN</packagename>
+    <version>2.5.9</version>
+	<creationDate>2012-09-08</creationDate>
+	<author>CHN Translation Team</author>
+	<authorEmail>zhous1998@sohu.com</authorEmail>
+	<authorUrl>www.joomla.cn</authorUrl>
+	<copyright>Copyright (C) 2010 CHN Joomla Translation Team  (http://joomlacode.org/gf/project/choice/). All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<packager>Joomla! China</packager>
+	<packagerurl>www.joomla.cn</packagerurl>
+	<description>Simplified Chinese language file for Joomla! 2.5.9. Welcome to download more extensions from okjoomla.com</description>
+ <files>
+        <file type="language" client="site" id="zh-CN">site_zh-CN.zip</file>
+        <file type="language" client="administrator" id="zh-CN">admin_zh-CN.zip</file>
+		<file type="file" client="site" id="TinyMCE_zh-CN">tinymce_zh-CN.zip</file>
+  </files>
+<updateservers>
+<server type="collection" priority="1" name="Accredited Joomla! Translations">http://update.joomla.org/language/translationlist.xml</server>
+</updateservers>
+</extension>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_easybookreloaded</name>
+    <author>Kubik-Rubik.de - Viktor Vogel</author>
+    <creationDate>26-Jan-2012</creationDate>
+    <copyright>Copyright 2012 Viktor Vogel - All rights reserved</copyright>
+    <license>Released under GNU/GPL</license>
+    <authorEmail>admin@kubik-rubik.de</authorEmail>
+    <authorUrl>http://www.kubik-rubik.de</authorUrl>
+    <version>2.5-1</version>
+    <description>COM_EASYBOOKRELOADED_XML_DESCRIPTION</description>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>easybookreloaded.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <filename>acl.php</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>scripts</folder>
+    </files>
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/en-GB.com_easybookreloaded.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.com_easybookreloaded.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.com_easybookreloaded.ini</language>
+        <language tag="hu-HU">language/hu-HU/hu-HU.com_easybookreloaded.ini</language>
+        <language tag="nl-NL">language/nl-NL/nl-NL.com_easybookreloaded.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.com_easybookreloaded.ini</language>
+        <language tag="cs-CZ">language/cs-CZ/cs-CZ.com_easybookreloaded.ini</language>
+        <language tag="sv-SE">language/sv-SE/sv-SE.com_easybookreloaded.ini</language>
+        <language tag="it-IT">language/it-IT/it-IT.com_easybookreloaded.ini</language>
+        <language tag="fi-FI">language/fi-FI/fi-FI.com_easybookreloaded.ini</language>
+        <language tag="es-ES">language/es-ES/es-ES.com_easybookreloaded.ini</language>
+        <language tag="tr-TR">language/tr-TR/tr-TR.com_easybookreloaded.ini</language>
+        <language tag="fa-IR">language/fa-IR/fa-IR.com_easybookreloaded.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_easybookreloaded/images/easybook_ico.png">COM_EASYBOOKRELOADED</menu>
+        <submenu>
+            <menu img="components/com_easybookreloaded/images/easybook_edit.png" link="option=com_easybookreloaded">COM_EASYBOOKRELOADED_MANAGE_ENTRIES</menu>
+            <menu img="components/com_easybookreloaded/images/easybook_config.png" link="option=com_easybookreloaded&amp;task=config">COM_EASYBOOKRELOADED_CONFIG</menu>
+            <menu img="components/com_easybookreloaded/images/easybook_unhappy.png" link="option=com_easybookreloaded&amp;controller=badwords">COM_EASYBOOKRELOADED_BADWORDFILTER</menu>
+            <menu img="components/com_easybookreloaded/images/easybook_info.png" link="option=com_easybookreloaded&amp;task=about">COM_EASYBOOKRELOADED_ABOUT</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>access.xml</filename>
+            <filename>easybookreloaded.php</filename>
+            <filename>controller.php</filename>
+            <folder>models</folder>
+            <folder>helpers</folder>
+            <folder>libraries</folder>
+            <folder>css</folder>
+            <folder>images</folder>
+            <folder>views</folder>
+            <folder>controllers</folder>
+            <folder>tables</folder>
+            <folder>sql</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_easybookreloaded.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_easybookreloaded.sys.ini</language>
+            <language tag="de-DE">language/de-DE/de-DE.com_easybookreloaded.ini</language>
+            <language tag="de-DE">language/de-DE/de-DE.com_easybookreloaded.sys.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_easybookreloaded.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.com_easybookreloaded.sys.ini</language>
+            <language tag="hu-HU">language/hu-HU/hu-HU.com_easybookreloaded.ini</language>
+            <language tag="hu-HU">language/hu-HU/hu-HU.com_easybookreloaded.sys.ini</language>
+            <language tag="nl-NL">language/nl-NL/nl-NL.com_easybookreloaded.ini</language>
+            <language tag="nl-NL">language/nl-NL/nl-NL.com_easybookreloaded.sys.ini</language>
+            <language tag="fr-FR">language/fr-FR/fr-FR.com_easybookreloaded.ini</language>
+            <language tag="fr-FR">language/fr-FR/fr-FR.com_easybookreloaded.sys.ini</language>
+            <language tag="cs-CZ">language/cs-CZ/cs-CZ.com_easybookreloaded.ini</language>
+            <language tag="cs-CZ">language/cs-CZ/cs-CZ.com_easybookreloaded.sys.ini</language>
+            <language tag="sv-SE">language/sv-SE/sv-SE.com_easybookreloaded.ini</language>
+            <language tag="sv-SE">language/sv-SE/sv-SE.com_easybookreloaded.sys.ini</language>
+            <language tag="it-IT">language/it-IT/it-IT.com_easybookreloaded.ini</language>
+            <language tag="it-IT">language/it-IT/it-IT.com_easybookreloaded.sys.ini</language>
+            <language tag="fi-FI">language/fi-FI/fi-FI.com_easybookreloaded.ini</language>
+            <language tag="fi-FI">language/fi-FI/fi-FI.com_easybookreloaded.sys.ini</language>
+            <language tag="es-ES">language/es-ES/es-ES.com_easybookreloaded.ini</language>
+            <language tag="es-ES">language/es-ES/es-ES.com_easybookreloaded.sys.ini</language>
+            <language tag="tr-TR">language/tr-TR/tr-TR.com_easybookreloaded.ini</language>
+            <language tag="tr-TR">language/tr-TR/tr-TR.com_easybookreloaded.sys.ini</language>
+        </languages>
+    </administration>
+</extension>

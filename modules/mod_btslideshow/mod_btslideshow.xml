@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>mod_btslideshow</name>
+	<author>Thomas</author>
+	<creationDate>August 2011</creationDate>
+	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>thomas@vsmarttech.com</authorEmail>
+	<authorUrl>http://bowthemes.com</authorUrl>
+	<version>1.2</version>
+	<description>This Module show a nice image slideshow with links and descriptions.</description>
+	<files>
+		<filename module="mod_btslideshow">mod_btslideshow.php</filename>
+		<folder>assets</folder>
+		<folder>fields</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>fileuploader.php</filename>
+		<filename>uploader.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_btslideshow.ini</language>
+		<language tag="en-GB">en-GB.mod_btslideshow.sys.ini</language>
+		<language tag="zh-CN">zh-CN.mod_btslideshow.ini</language>
+		<language tag="zh-CN">zh-CN.mod_btslideshow.sys.ini</language>
+		<language tag="zh-TW">zh-TW.mod_btslideshow.ini</language>
+		<language tag="zh-TW">zh-TW.mod_btslideshow.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_btslideshow/fields">
+			<fieldset name="images-manager" label="MOD_BTSLIDESHOW_FIELDSET_GALLERY_MANAGER">
+				<field name="gallery" type="gallery" default="" label="MOD_BTSLIDESHOW_FIELD_GALLERY_LABEL" description="MOD_BTSLIDESHOW_FIELD_GALLERY_DESC" />
+			</fieldset>
+			<fieldset name="basic" label="MOD_BTSLIDESHOW_FIELDSET_SLIDESHOW_OPTIONS">
+				<field name="width" type="text" size="9" default="727" label="MOD_BTSLIDESHOW_FIELD_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_WIDTH_DESC" />
+				<field name="height" type="text" size="9" default="300" label="MOD_BTSLIDESHOW_FIELD_HEIGHT_LABEL" description="MOD_BTSLIDESHOW_FIELD_HEIGHT_DESC" />
+				<field name="jpeg-compression" type="text" size="9" default="100" label="MOD_BTSLIDESHOW_FIELD_JPEG_COMPRESSION_LABEL" description="MOD_BTSLIDESHOW_FIELD_JPEG_COMPRESSION_DESC" />
+				<field name="thumb-width" type="text" size="9" default="70" label="MOD_BTSLIDESHOW_FIELD_THUMB_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_THUMB_WIDTH_DESC" />
+				<field name="thumb-height" type="text" size="9" default="40" label="MOD_BTSLIDESHOW_FIELD_THUMB_HEIGHT_LABEL" description="MOD_BTSLIDESHOW_FIELD_THUMB_HEIGHT_DESC" />
+				<field name="effect" type="list" default="random" label="MOD_BTSLIDESHOW_FIELD_EFFECT_LABEL" description="MOD_BTSLIDESHOW_FIELD_EFFECT_DESC">
+					<option value="cube">cube</option>
+					<option value="cubeRandom">cubeRandom</option>
+					<option value="block">block</option>
+					<option value="cubeStop">cubeStop</option>
+					<option value="cubeHide">cubeHide</option>
+					<option value="cubeSize">cubeSize</option>
+					<option value="horizontal">horizontal</option>
+					<option value="showBars">showBars</option>
+					<option value="showBarsRandom">showBarsRandom</option>
+					<option value="tube">tube</option>
+					<option value="fade">fade</option>
+					<option value="fadeFour">fadeFour</option>
+					<option value="paralell">paralell</option>
+					<option value="blind">blind</option>
+					<option value="blindHeight">blindHeight</option>
+					<option value="blindWidth">blindWidth</option>
+					<option value="directionTop">directionTop</option>
+					<option value="directionBottom">directionBottom</option>
+					<option value="directionRight">directionRight</option>
+					<option value="directionLeft">directionLeft</option>
+					<option value="cubeStopRandom">cubeStopRandom</option>
+					<option value="cubeSpread">cubeSpread</option>
+					<option value="cubeJelly">cubeJelly</option>
+					<option value="glassCube">glassCube</option>
+					<option value="glassBlock">glassBlock</option>
+					<option value="random">random</option>
+					<option value="randomSmart">randomSmart</option>
+					<option value="glassCube">glassCube</option>
+					<option value="glassBlock">glassBlock</option>
+				</field>
+				<field name="time-interval" type="text" size="9" default="3500" label="MOD_BTSLIDESHOW_FIELD_TIME_INTERVAL_LABEL" description="MOD_BTSLIDESHOW_FIELD_TIME_INTERVAL_DESC" />
+				<field name="navigation-type" type="list" default="thumbs" label="MOD_BTSLIDESHOW_FIELD_NAVIGATION_TYPE_LABEL" description="MOD_BTSLIDESHOW_FIELD_NAVIGATION_TYPE_DESC">
+					<option value="hide">MOD_BTSLIDESHOW_NAVIGATION_TYPE_HIDE</option>
+					<option value="numbers">MOD_BTSLIDESHOW_NAVIGATION_TYPE_NUMBERS</option>
+					<option value="thumbs">MOD_BTSLIDESHOW_NAVIGATION_TYPE_THUMBS</option>
+					<option value="dots">MOD_BTSLIDESHOW_NAVIGATION_TYPE_DOTS</option>
+				</field>
+				<field name="caption" type="list" default="bottom" label="MOD_BTSLIDESHOW_FIELD_CAPTION_LABEL" description="MOD_BTSLIDESHOW_FIELD_CAPTION_DESC">
+					<option value="top">MOD_BTSLIDESHOW_POSITION_TOP</option>
+					<option value="right">MOD_BTSLIDESHOW_POSITION_RIGHT</option>
+					<option value="bottom">MOD_BTSLIDESHOW_POSITION_BOTTOM</option>
+					<option value="left">MOD_BTSLIDESHOW_POSITION_LEFT</option>
+					<option value="">MOD_BTSLIDESHOW_POSITION_HIDE</option>
+				</field>
+				<field name="caption-width" type="text" size="9" default="250" label="MOD_BTSLIDESHOW_FIELD_CAPTION_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_CAPTION_WIDTH_DESC" />
+				<field name="show-button" type="list" default="1" label="MOD_BTSLIDESHOW_FIELD_SHOW_BUTTON_LABEL" description="MOD_BTSLIDESHOW_FIELD_SHOW_BUTTON_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<!-- Joomla! 1.5 uses params -->
+	<params name="params" addpath="/modules/mod_btslideshow/fields">
+			<param name="gallery" type="gallery" default="" label="MOD_BTSLIDESHOW_FIELD_GALLERY_LABEL" description="MOD_BTSLIDESHOW_FIELD_GALLERY_DESC" />
+			<param name="width" type="text" size="9" default="727" label="MOD_BTSLIDESHOW_FIELD_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_WIDTH_DESC" />
+			<param name="height" type="text" size="9" default="300" label="MOD_BTSLIDESHOW_FIELD_HEIGHT_LABEL" description="MOD_BTSLIDESHOW_FIELD_HEIGHT_DESC" />
+			<param name="jpeg-compression" type="text" size="9" default="100" label="MOD_BTSLIDESHOW_FIELD_JPEG_COMPRESSION_LABEL" description="MOD_BTSLIDESHOW_FIELD_JPEG_COMPRESSION_DESC" />
+			<param name="thumb-width" type="text" size="9" default="70" label="MOD_BTSLIDESHOW_FIELD_THUMB_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_THUMB_WIDTH_DESC" />
+			<param name="thumb-height" type="text" size="9" default="40" label="MOD_BTSLIDESHOW_FIELD_THUMB_HEIGHT_LABEL" description="MOD_BTSLIDESHOW_FIELD_THUMB_HEIGHT_DESC" />
+			<param name="effect" type="list" default="random" label="MOD_BTSLIDESHOW_FIELD_EFFECT_LABEL" description="MOD_BTSLIDESHOW_FIELD_EFFECT_DESC">
+				<option value="cube">cube</option>
+				<option value="cubeRandom">cubeRandom</option>
+				<option value="block">block</option>
+				<option value="cubeStop">cubeStop</option>
+				<option value="cubeHide">cubeHide</option>
+				<option value="cubeSize">cubeSize</option>
+				<option value="horizontal">horizontal</option>
+				<option value="showBars">showBars</option>
+				<option value="showBarsRandom">showBarsRandom</option>
+				<option value="tube">tube</option>
+				<option value="fade">fade</option>
+				<option value="fadeFour">fadeFour</option>
+				<option value="paralell">paralell</option>
+				<option value="blind">blind</option>
+				<option value="blindHeight">blindHeight</option>
+				<option value="blindWidth">blindWidth</option>
+				<option value="directionTop">directionTop</option>
+				<option value="directionBottom">directionBottom</option>
+				<option value="directionRight">directionRight</option>
+				<option value="directionLeft">directionLeft</option>
+				<option value="cubeStopRandom">cubeStopRandom</option>
+				<option value="cubeSpread">cubeSpread</option>
+				<option value="cubeJelly">cubeJelly</option>
+				<option value="glassCube">glassCube</option>
+				<option value="glassBlock">glassBlock</option>
+				<option value="random">random</option>
+				<option value="randomSmart">randomSmart</option>
+				<option value="glassCube">glassCube</option>
+				<option value="glassBlock">glassBlock</option>
+			</param>
+			<param name="time-interval" type="text" size="9" default="3500" label="MOD_BTSLIDESHOW_FIELD_TIME_INTERVAL_LABEL" description="MOD_BTSLIDESHOW_FIELD_TIME_INTERVAL_DESC" />
+			<param name="navigation-type" type="list" default="thumbs" label="MOD_BTSLIDESHOW_FIELD_NAVIGATION_TYPE_LABEL" description="MOD_BTSLIDESHOW_FIELD_NAVIGATION_TYPE_DESC">
+				<option value="hide">MOD_BTSLIDESHOW_NAVIGATION_TYPE_HIDE</option>
+				<option value="numbers">MOD_BTSLIDESHOW_NAVIGATION_TYPE_NUMBERS</option>
+				<option value="thumbs">MOD_BTSLIDESHOW_NAVIGATION_TYPE_THUMBS</option>
+				<option value="dots">MOD_BTSLIDESHOW_NAVIGATION_TYPE_DOTS</option>
+			</param>
+			<param name="caption" type="list" default="bottom" label="MOD_BTSLIDESHOW_FIELD_CAPTION_LABEL" description="MOD_BTSLIDESHOW_FIELD_CAPTION_DESC">
+				<option value="top">MOD_BTSLIDESHOW_POSITION_TOP</option>
+				<option value="right">MOD_BTSLIDESHOW_POSITION_RIGHT</option>
+				<option value="bottom">MOD_BTSLIDESHOW_POSITION_BOTTOM</option>
+				<option value="left">MOD_BTSLIDESHOW_POSITION_LEFT</option>
+				<option value="">MOD_BTSLIDESHOW_POSITION_HIDE</option>
+			</param>
+			<param name="caption-width" type="text" size="9" default="250" label="MOD_BTSLIDESHOW_FIELD_CAPTION_WIDTH_LABEL" description="MOD_BTSLIDESHOW_FIELD_CAPTION_WIDTH_DESC" />
+			<param name="show-button" type="list" default="1" label="MOD_BTSLIDESHOW_FIELD_SHOW_BUTTON_LABEL" description="MOD_BTSLIDESHOW_FIELD_SHOW_BUTTON_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</param>
+	</params>
+</install>

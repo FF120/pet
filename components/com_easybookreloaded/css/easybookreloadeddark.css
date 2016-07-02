@@ -1,0 +1,57 @@
+.easy_frame {border: #2F2F2F solid 1px; background-color:black;}
+.easy_top {background:none repeat scroll 0 0 #1F1F1F;height: 30px;}
+.easy_top_left {padding-left: 10px; padding-top: 5px; padding-bottom: 10px; float: left;}
+.easy_top_right {float: right; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;}
+.easy_big {font-size: 16px; vertical-align: middle;}
+.easy_small {font-size: 9px; vertical-align: middle; padding-left: 10px;}
+.easy_small_red {color: #e8523e; font-size: 9px; vertical-align: middle;}
+.easy_small_notice {font-size: 0.85em; padding-left: 50px;}
+.easy_pagination {font-size: 16px; text-align:center; display: block;}
+div.easy_pagination {font-size: 16px; text-align:center; display: block; margin-top:16px;}
+div.easy_pagination li {display: inline !important;}
+.easy_align_middle {vertical-align: middle; padding-right:1px;}
+.easy_admincomment {margin-left: 10px; margin-right: 10px;  padding: 10px; padding-bottom: 15px; margin-bottom: 8px; background-color:#0F0F0F; border-right: #1F1F1F solid 5px; border-left: #1F1F1F solid 5px; background-image: url(../images/entry_bg_dark.gif); background-position:bottom; background-repeat:repeat-x; color: #666666;}
+.easy_contact {margin-left: 10px; text-align:left; margin-right: 10px; margin-top: 8px; padding: 5px; padding-bottom: 10px; background-color:#0F0F0F; border-right: #1F1F1F solid 5px; border-left: #1F1F1F solid 5px; position:relative; background-image: url(../images/entry_bg_dark.gif); background-position:bottom; background-repeat:repeat-x;}
+.easy_content {margin-left: 10px; text-align:left; margin-right: 10px; margin-top: 8px; padding: 10px; padding-bottom: 15px; margin-bottom: 8px; border-right: #1F1F1F solid 5px; border-left: #1F1F1F solid 5px; background-image: url(../images/entry_bg_dark.gif); background-position:bottom; background-repeat:repeat-x;background-color:#0F0F0F;}
+.easy_title {margin-left: 10px; text-align:left; margin-right: 10px; margin-top: 8px; padding: 10px; padding-bottom: 15px; margin-bottom: 8px; border-right: #1F1F1F solid 5px; border-left: #1F1F1F solid 5px; background-image: url(../images/entry_bg_dark.gif); background-position:bottom; background-repeat:repeat-x;background-color:#0F0F0F; font-size: 130%; font-weight: bold;}
+.easy_intro {}
+.easy_entrylink {padding-top: 10px;}
+.easy_center {text-align: center;}
+#easybook {color: #7F7F7F;}
+#easyfooter {margin-top: 10px;font-size: 90%;text-align: center;}
+#easyfooterinv {margin-top: 10px;font-size: 90%;text-align: center; display: none;}
+#easybook span.pagination {text-align:center; display: block;}
+#easybook h2 {margin: 0;}
+#easybook p.clr {clear: none;}
+#easybook dl {margin: 0;padding: 0;padding-top: 5px;padding-bottom: 5px;}
+#easybook p.date {margin: 0;padding: 0;border-bottom: 1px solid #5F5F5F;}
+#easybook p.rate {float: right;margin: 0;padding: 0;margin-right: 10px;}
+#easybook dt {float: left;}
+#easybook dt strong {display: block;margin-left: 5px;}
+#easybook dt em {margin: 0;padding: 0;font-size: 12px;margin-left: 5px;}
+#easybook dd {min-height: 40px;height: auto !important;height: 40px;margin-left: 150px;}
+#easybook a span {display: none;}
+#easybook a.hp {float: left;display: block;height: 16px;width: 16px;margin-top: 3px;margin-right: 2px;}
+#easybook img.msn {float: left;display: block;height: 16px;margin-right: 2px;width: 16px;}
+#easybook a.view {float: right;}
+#easybook a.sign {float: right;}
+#easybook a.email {float: left;display: block;height: 16px;width: 16px;margin-top: 3px;margin-right: 2px;}
+#easybook a.icq {float: left;display: block;height: 16px;width: 16px;margin-right: 2px;margin-top: 3px;}
+#easybook a.aim {float: left;display: block;height: 16px;width: 16px;margin-top: 3px;margin-right: 2px;}
+#easybook a.yah {float: left;display: block;height: 16px;margin-top: 3px;margin-right: 2px;width: 16px;}
+#easybook a.skype {float: left;display: block;height: 16px;width: 16px;margin-top: 3px;margin-right: 2px;}
+#easybook fieldset#form {border: 0;width: 460px;}
+#easybook fieldset#form legend {display: none;}
+#easybook fieldset#form p {margin: 0;font-size: 13px;margin: 18px;}
+#easybook fieldset#form label {display: block;width: 7em;float: left;}
+#easybook fieldset#form input {width:245px;}
+#easybook fieldset#form textarea {width: 245px;}
+#easybook fieldset#form input.button {padding: 0;width: 60px;cursor: pointer;}
+#easybook p.admincomment {margin: 0;padding: 0;border-top: 1px solid #5F5F5F;margin-top: 6px;}
+#easybook div#bbcode {margin-left: 105px;}
+#easybook #smile {float: right;margin-top: 15px;}
+ul.pagination {font-size:14px;text-align:center !important;}
+#easybook pre {border-left:5px solid #1F1F1F;font:1.2em/1.5 "Courier News",monospace;margin:0;padding:8px;background:none repeat scroll 0 0 #2F2F2F;}
+#easybook tr, #easybook td {border: none !important; padding: 5px !important;}
+#easybook a.star:hover {text-decoration: none !important; background-color: transparent !important;}
+#easybookvotetip {font-weight: bold; padding-left: 10px; padding-bottom: 3px;}
