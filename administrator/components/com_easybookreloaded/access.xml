@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<access component="com_easybookreloaded">
-    <section name="component">
-        <action name="core.admin" title="COM_EASYBOOKRELOADED_JACTION_ADMIN" description="COM_EASYBOOKRELOADED_JACTION_ADMIN_COMPONENT_DESC" />
-        <action name="core.manage" title="COM_EASYBOOKRELOADED_JACTION_MANAGE" description="COM_EASYBOOKRELOADED_JACTION_MANAGE_COMPONENT_DESC" />
-    </section>
-</access>
