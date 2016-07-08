@@ -21,6 +21,6 @@
 * 配置数据库连接信息，如下图
   ![DB_restore](DB_restore.png)
 * 单击Next等待导入数据库成功，单击OK进入网站信息配置界面，配置好网站信息，进入Finish
-* 将刚才的`installation`更名为`isntallation2`
+* 将刚才的`installation`更名为`installlation2`
 * 访问网站
 
