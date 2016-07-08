@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = '网站在维护中。<br /> 请稍候访问。';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = '*';
+	public $sitename = '*****';
 	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = '20';
@@ -18,7 +18,7 @@ class JConfig {
 	public $db = 'pet';
 	public $dbprefix = 'pet_';
 	public $live_site = '';
-	public $secret = 'HNkmQEH2EZI8hPb9';
+	public $secret = 'ja21oWWBd7QFjZUF';
 	public $gzip = '0';
 	public $error_reporting = 'default';
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
@@ -30,7 +30,7 @@ class JConfig {
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
 	public $mailer = 'mail';
-	public $mailfrom = '1241021069@qq.com';
+	public $mailfrom = '12345678@qq.com';
 	public $fromname = '家有萌宠';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
@@ -53,8 +53,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = 'D:/WebRoot/show/logs';
-	public $tmp_path = 'D:/WebRoot/show/tmp';
+	public $log_path = 'D:/WebRoot/pac/pet/logs';
+	public $tmp_path = 'D:/WebRoot/pac/pet/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
