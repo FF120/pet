@@ -8,11 +8,11 @@
 
 * 新建`MySQL`数据库，导入数据库文件`pet.sql`
 
-* 网站首页：localhost/pet
-  后台地址：localhost/pet/administrator
-  演示地址：ff120.github.io/pet
-  测试用户名：admin
-  密码：123456
+> 网站首页：localhost/pet
+> 后台地址：localhost/pet/administrator
+> 演示地址：[ff120.github.io/pet](ff120.github.io/pet)
+> 测试用户名：admin
+> 密码：123456
   
 # 部署方法二
 上述部署方法出现问题，无法修复，可以使用下述办法从打包好的文件部署，整个过程会提供Web界面配置必要的信息。
